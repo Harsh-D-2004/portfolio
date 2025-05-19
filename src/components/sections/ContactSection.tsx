@@ -34,50 +34,50 @@ const ContactSection = () => {
               <h3 className="text-xl font-bold text-center">Connect With Me</h3>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-2 sm:space-y-0">
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 text-primary" />
-                  <span>doshiharsh2004@gmail.com</span>
+                  <span className="break-all">doshiharsh2004@gmail.com</span>
                 </div>
                 <Button variant="outline" size="sm" onClick={() => window.open('mailto:doshiharsh2004@gmail.com' , '_blank')}>
                   Email
                 </Button>
               </div>
 
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-2 sm:space-y-0">
                 <div className="flex items-center space-x-3">
                   <MessageCircleIcon className="h-5 w-5 text-primary" />
-                  <span>+91 7038000319</span>
+                  <span className="break-all">+91 7038000319</span>
                 </div>
                 <Button variant="outline" size="sm" onClick={() => window.open('https://wa.me/+917038000319' , '_blank')}>
                   Whatsapp
                 </Button>
               </div>
               
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-2 sm:space-y-0">
                 <div className="flex items-center space-x-3">
                   <GitBranchIcon className="h-5 w-5 text-primary" />
-                  <span>github.com/Harsh-D-2004</span>
+                  <span className="break-all">github.com/Harsh-D-2004</span>
                 </div>
                 <Button variant="outline" size="sm" onClick={() => window.open('https://github.com/Harsh-D-2004', '_blank')}>
                   GitHub
                 </Button>
               </div>
               
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-2 sm:space-y-0">
                 <div className="flex items-center space-x-3">
                   <Linkedin className="h-5 w-5 text-primary" />
-                  <span>linkedin.com/in/harsh-doshi-86a457294/</span>
+                  <span className="break-all">linkedin.com/in/harsh-doshi-86a457294/</span>
                 </div>
                 <Button variant="outline" size="sm" onClick={() => window.open('https://www.linkedin.com/in/harsh-doshi-86a457294/', '_blank')}>
                   LinkedIn
                 </Button>
               </div>
               
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-2 sm:space-y-0">
                 <div className="flex items-center space-x-3">
                   <X className="h-5 w-5 text-primary" />
-                  <span>x.com/emo_dev_</span>
+                  <span className="break-all">x.com/emo_dev_</span>
                 </div>
                 <Button variant="outline" size="sm" onClick={() => window.open('https://x.com/emo_dev_?t=jVzDpCUOneXxKQQvr2108Q&s=09', '_blank')}>
                   X

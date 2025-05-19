@@ -15,7 +15,7 @@ export const projects: Project[] = [
     image:
       "https://raw.githubusercontent.com/Harsh-D-2004/Alumnet/refs/heads/main/SS/logo.png",
     stack: ["FastAPI", "Neo4j", "Pinecone", "LangChain", "LLM Integration", "Embeddings" , "Hugging Face", "Python"],
-    demoUrl: "https://alumnet.vercel.app", // replace with actual demo URL if different
+    demoUrl: "https://alumnet.vercel.app",
     githubUrl: "https://github.com/Harsh-D-2004/Alumnet",
   },
   {
@@ -46,7 +46,7 @@ export const projects: Project[] = [
       "https://raw.githubusercontent.com/Harsh-D-2004/DyslexiLearn/refs/heads/main/Screenshots/logo.png",
     stack: ["Python", "Flask", "React", "Javascript" , "HTML" , "CSS" , "Material UI" , "Deep Learning" , "Tensorflow" , "OCR"],
     demoUrl: "https://alumnet.vercel.app",
-    githubUrl: "https://github.com/Harsh-D-2004/Neural-Mix",
+    githubUrl: "https://github.com/Harsh-D-2004/DyslexiLearn",
   },
   {
     title: "Medicine Management System",
