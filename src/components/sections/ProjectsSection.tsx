@@ -55,7 +55,7 @@ const ProjectsSection = () => {
           viewport={{ once: true }}
           className="grid gap-8 md:grid-cols-2"
         >
-          {projects.map((project, index) => (
+          {projects.slice(0, 4).map((project, index) => (
             <motion.div key={index} variants={item}>
               <Card className="h-full flex flex-col border border-border/50 bg-secondary/20 backdrop-blur-sm overflow-hidden hover:border-primary/50 transition-colors">
                 <div className="p-3 pt-4">
@@ -96,17 +96,6 @@ const ProjectsSection = () => {
                     >
                       <Github className="mr-1 h-4 w-4" />
                       Code
-                    </a>
-                  </Button>
-                  <Button size="sm" asChild>
-                    <a
-                      href={project.demoUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center"
-                    >
-                      <Link className="mr-1 h-4 w-4" />
-                      Demo
                     </a>
                   </Button>
                 </CardFooter>
