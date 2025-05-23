@@ -33,7 +33,7 @@ import {
 } from "@/components/ui/select";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { cn } from "@/lib/utils";
-import { projects  , Project } from "@/helper/projectInfo";
+import { projects, Project } from "@/helper/projectInfo";
 
 const container = {
   hidden: { opacity: 0 },
@@ -103,22 +103,22 @@ const ProjectsPage = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center mb-12"
+            className="text-center mb-10"
           >
-            <h1 className="text-4xl font-bold mb-4 inline-flex items-center">
-              <Code className="mr-2 h-7 w-7" /> All Projects
+            <h1 className="text-3xl font-bold mb-2 inline-flex items-center">
+              <Code className="mr-2 h-6 w-6" /> All Projects
             </h1>
-            <p className="text-muted-foreground max-w-md mx-auto">
+            <p className="text-muted-foreground max-w-md mx-auto text-sm">
               Browse through my complete portfolio of work, filter by
               technology, or sort to find what interests you.
             </p>
           </motion.div>
 
-          <div className="flex flex-wrap justify-between items-center gap-4 mb-8">
+          <div className="flex flex-wrap justify-between items-center gap-4 mb-6">
             <div className="flex items-center gap-2">
               <Filter className="h-4 w-4 text-muted-foreground" />
               <Select onValueChange={handleFilterChange} defaultValue="All">
-                <SelectTrigger className="w-[180px]">
+                <SelectTrigger className="w-[160px]">
                   <SelectValue placeholder="Filter by tech" />
                 </SelectTrigger>
                 <SelectContent>
@@ -134,7 +134,7 @@ const ProjectsPage = () => {
               </Select>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-3">
               <Button
                 variant="outline"
                 size="sm"
@@ -143,41 +143,26 @@ const ProjectsPage = () => {
               >
                 {sortOrder === "asc" ? (
                   <>
-                    <ArrowDownAZ className="h-4 w-4" />A to Z
+                    <ArrowDownAZ className="h-4 w-4" /> A to Z
                   </>
                 ) : (
                   <>
-                    <ArrowUpZA className="h-4 w-4" />Z to A
+                    <ArrowUpZA className="h-4 w-4" /> Z to A
                   </>
                 )}
               </Button>
-
-              {/* <ToggleGroup type="single" defaultValue="grid">
-                <ToggleGroupItem
-                  value="grid"
-                  onClick={() => setViewMode("grid")}
-                >
-                  <Grid2X2 className="h-4 w-4" />
-                </ToggleGroupItem>
-                <ToggleGroupItem
-                  value="list"
-                  onClick={() => setViewMode("list")}
-                >
-                  <List className="h-4 w-4" />
-                </ToggleGroupItem>
-              </ToggleGroup> */}
             </div>
           </div>
 
           {filteredProjects.length === 0 && (
             <div className="text-center py-12">
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-sm">
                 No projects matching the selected filter.
               </p>
               <Button
                 variant="link"
                 onClick={() => setActiveFilter("All")}
-                className="mt-2"
+                className="mt-2 text-sm"
               >
                 Clear filter
               </Button>
@@ -188,65 +173,46 @@ const ProjectsPage = () => {
             variants={container}
             initial="hidden"
             animate="show"
-            className={cn(
-              viewMode === "grid"
-                ? "grid gap-8 md:grid-cols-2 lg:grid-cols-3"
-                : "flex flex-col gap-6"
-            )}
+            className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
           >
             {filteredProjects.map((project, index) => (
               <motion.div key={index} variants={item}>
-                <Card
-                  className={cn(
-                    "h-full flex flex-col border border-border/50 bg-secondary/20 backdrop-blur-sm overflow-hidden hover:border-primary/50 transition-colors",
-                    viewMode === "list" && "flex-row"
-                  )}
-                >
-                  <div
-                    className={cn(
-                      viewMode === "grid" ? "h-48" : "w-1/3 h-auto",
-                      "overflow-hidden"
-                    )}
-                  >
-                    <div className="p-3 pt-4">
-                      <div className="overflow-hidden rounded-xl shadow-md">
-                        <img
-                          src={project.image}
-                          alt={project.title}
-                          className="w-full h-48 object-cover object-top transition-transform duration-500 hover:scale-105"
-                        />
-                      </div>
+                <Card className="h-full flex flex-col border border-border/30 bg-secondary/10 hover:shadow-md transition-shadow">
+                  <div className="p-3 pt-4">
+                    <div className="aspect-video overflow-hidden rounded-xl shadow-md">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                      />
                     </div>
                   </div>
-                  <div
-                    className={cn(
-                      viewMode === "list" && "flex-1 flex flex-col"
-                    )}
-                  >
-                    <CardHeader>
-                      <CardTitle className="text-xl">{project.title}</CardTitle>
-                      <CardDescription className="text-muted-foreground">
+                  <div className="p-4 flex flex-col justify-between flex-1">
+                    <div>
+                      <CardTitle className="text-lg font-semibold mb-1">
+                        {project.title}
+                      </CardTitle>
+                      <CardDescription className="text-sm text-muted-foreground mb-2">
                         {project.description}
                       </CardDescription>
-                    </CardHeader>
-                    <CardContent className="flex-grow">
-                      <div className="flex flex-wrap gap-2">
-                        {project.stack.map((tech) => (
-                          <Badge
-                            key={tech}
-                            variant="secondary"
-                            className={cn(
-                              "bg-secondary/50",
-                              activeFilter === tech &&
-                                "bg-primary/20 border-primary/50"
-                            )}
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                    </CardContent>
-                    <CardFooter className="flex gap-3">
+                    </div>
+
+                    <div className="flex flex-wrap gap-1 text-xs mb-3">
+                      {project.stack.map((tech) => (
+                        <Badge
+                          key={tech}
+                          className={cn(
+                            "bg-secondary/40 px-2 py-0.5 rounded-sm",
+                            activeFilter === tech &&
+                              "bg-primary/20 border border-primary/50"
+                          )}
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
+                    </div>
+
+                    <div className="flex gap-2 mt-auto">
                       <Button variant="outline" size="sm" asChild>
                         <a
                           href={project.githubUrl}
@@ -258,18 +224,19 @@ const ProjectsPage = () => {
                           Code
                         </a>
                       </Button>
-                      {/* <Button size="sm" asChild>
-                        <a
-                          href={project.demoUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center"
-                        >
-                          <Link className="mr-1 h-4 w-4" />
-                          Demo
-                        </a>
-                      </Button> */}
-                    </CardFooter>
+                      {/* Uncomment if demo links are needed
+                    <Button size="sm" asChild>
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center"
+                      >
+                        <Link className="mr-1 h-4 w-4" />
+                        Demo
+                      </a>
+                    </Button> */}
+                    </div>
                   </div>
                 </Card>
               </motion.div>

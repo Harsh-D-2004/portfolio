@@ -31,19 +31,19 @@ const item = {
 
 const ProjectsSection = () => {
   return (
-    <section id="projects" className="py-20 px-4">
+    <section id="projects" className="py-16 px-4">
       <div className="container max-w-screen-md mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
-          <h2 className="text-3xl font-bold mb-4 inline-flex items-center">
-            <Code className="mr-2 h-6 w-6" /> Featured Projects
+          <h2 className="text-2xl font-bold mb-3 inline-flex items-center">
+            <Code className="mr-2 h-5 w-5" /> Featured Projects
           </h2>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground text-sm">
             Some of my notable works and contributions
           </p>
         </motion.div>
@@ -53,40 +53,42 @@ const ProjectsSection = () => {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="grid gap-8 md:grid-cols-2"
+          className="grid gap-6 md:grid-cols-2"
         >
           {projects.slice(0, 4).map((project, index) => (
             <motion.div key={index} variants={item}>
               <Card className="h-full flex flex-col border border-border/50 bg-secondary/20 backdrop-blur-sm overflow-hidden hover:border-primary/50 transition-colors">
-                <div className="p-3 pt-4">
-                  <div className="overflow-hidden rounded-xl shadow-md">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-48 object-cover object-top transition-transform duration-500 hover:scale-105"
-                    />
+                <div className="p-2 pt-3">
+                  <div className="p-3 pt-4">
+                    <div className="aspect-video overflow-hidden rounded-xl shadow-md">
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                      />
+                    </div>
                   </div>
                 </div>
-                <CardHeader>
-                  <CardTitle className="text-xl">{project.title}</CardTitle>
-                  <CardDescription className="text-muted-foreground">
+                <CardHeader className="pb-2">
+                  <CardTitle className="text-lg">{project.title}</CardTitle>
+                  <CardDescription className="text-muted-foreground text-sm">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent className="flex-grow">
-                  <div className="flex flex-wrap gap-2">
+                <CardContent className="flex-grow pb-2">
+                  <div className="flex flex-wrap gap-1">
                     {project.stack.map((tech) => (
                       <Badge
                         key={tech}
                         variant="secondary"
-                        className="bg-secondary/50"
+                        className="bg-secondary/50 text-xs"
                       >
                         {tech}
                       </Badge>
                     ))}
                   </div>
                 </CardContent>
-                <CardFooter className="flex gap-3">
+                <CardFooter className="flex gap-2 pt-0 pb-3 px-4">
                   <Button variant="outline" size="sm" asChild>
                     <a
                       href={project.githubUrl}
@@ -104,8 +106,8 @@ const ProjectsSection = () => {
           ))}
         </motion.div>
 
-        <div className="mt-12 text-center">
-          <Button asChild>
+        <div className="mt-10 text-center">
+          <Button asChild size="sm">
             <RouterLink to="/projects" className="inline-flex items-center">
               View All Projects
               <Link className="ml-2 h-4 w-4" />
