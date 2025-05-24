@@ -28,6 +28,16 @@ export const projects: Project[] = [
     demoUrl: "https://alumnet.vercel.app",
     githubUrl: "https://github.com/Harsh-D-2004/BudgetGPT",
   },
+    {
+    title: "Amazon Fine Foods Reviews Sentiment Analysis",
+    description:
+      "This project aims to automatically classify review sentiments and offer insights that help businesses better understand customer feedback and improve their offerings.",
+    image:
+      "https://raw.githubusercontent.com/Harsh-D-2004/Amazon-fine-foods-reviews-sentiment-analysis/refs/heads/main/ss/aff_logo.png",
+    stack: ["Python", "Jupyter Notebook", "Streamlit" , "Sckit-Learn" , "Embeddings" , "Machine Learning" , "Classification"],
+    demoUrl: "https://alumnet.vercel.app",
+    githubUrl: "https://github.com/Harsh-D-2004/Amazon-fine-foods-reviews-sentiment-analysis",
+  },
   {
     title: "Neural Mix",
     description:
