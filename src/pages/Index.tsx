@@ -13,7 +13,6 @@ const Index = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Check if there's a hash in the URL, and scroll to that section
     if (location.hash) {
       const id = location.hash.substring(1);
       const element = document.getElementById(id);
@@ -23,7 +22,6 @@ const Index = () => {
         }, 100);
       }
     } else {
-      // Scroll to top if no hash
       window.scrollTo(0, 0);
     }
   }, [location]);

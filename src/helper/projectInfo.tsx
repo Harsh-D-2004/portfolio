@@ -39,6 +39,16 @@ export const projects: Project[] = [
     githubUrl: "https://github.com/Harsh-D-2004/Amazon-fine-foods-reviews-sentiment-analysis",
   },
   {
+    title: "Market Analysis Agent",
+    description:
+      "A voice-activated AI agent that processes market-related queries such as current stock updates using audio input",
+    image:
+      "https://raw.githubusercontent.com/Harsh-D-2004/market-analysis-agent/refs/heads/main/content/logo.png",
+    stack: ["Flask", "Pinecone", "LangChain", "LLM Integration", "Embeddings" , "Hugging Face", "Python" , "OpenAIWhisper" , "Streamlit"],
+    demoUrl: "https://alumnet.vercel.app",
+    githubUrl: "https://github.com/Harsh-D-2004/market-analysis-agent",
+  },
+  {
     title: "Neural Mix",
     description:
       "A desktop application that enables programmatic control of VST plugins. It leverages user-generated queries to map and control various knobs and parameters in the VSTs dynamically.",
@@ -47,6 +57,16 @@ export const projects: Project[] = [
     stack: ["Python", "Flask", "Electron", "Javascript" , "HTML" , "CSS" , "Material UI" , "VST SDK"],
     demoUrl: "https://alumnet.vercel.app",
     githubUrl: "https://github.com/Harsh-D-2004/Neural-Mix",
+  },
+  {
+    title: "Research Agent (Scraper)",
+    description:
+      "This project extracts subcontractor information, evaluates each candidate based on key criteria, and returns a list of structured results with an overall score out of 100.",
+    image:
+      "https://raw.githubusercontent.com/Harsh-D-2004/Research-agent/refs/heads/main/ss/logo.png",
+    stack: ["FastAPI", "Pinecone", "LangChain", "LLM Integration", "Python" , "REST APIs" , "SerpAPI" , "Beautiful Soup" , "Scraper"],
+    demoUrl: "https://alumnet.vercel.app",
+    githubUrl: "https://github.com/Harsh-D-2004/Research-agent",
   },
   {
     title: "DyslexiLearn",
