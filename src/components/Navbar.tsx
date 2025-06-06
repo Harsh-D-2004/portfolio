@@ -91,7 +91,7 @@ const Navbar = () => {
                   {item.name}
                 </Link>
               ))}
-              <Button className="mt-4">
+              <Button className="mt-4" onClick={resumeDownload}>
                 Resume
               </Button>
             </nav>
