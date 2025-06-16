@@ -1,5 +1,5 @@
 
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import HomeSection from '@/components/sections/HomeSection';
@@ -8,6 +8,7 @@ import ProjectsSection from '@/components/sections/ProjectsSection';
 import AchievementsSection from '@/components/sections/AchievementsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/Footer';
+import SkillsSection from '@/components/sections/SkillsSection';
 
 const Index = () => {
   const location = useLocation();
@@ -30,6 +31,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground">
       <Navbar />
       <HomeSection />
+      <SkillsSection />
       <WorkSection />
       <ProjectsSection />
       <AchievementsSection />
