@@ -81,11 +81,21 @@ export const projects: Project[] = [
   {
     title: "Medicine Management System",
     description:
-      "A Medicine management System which allows users to manage medicine records and provide dashboard for tracking them as one in pharmacies ",
+      "A Medicine management System which allows users to manage medicine records and provide dashboard for tracking them as one in pharmacies.",
     image:
       "https://raw.githubusercontent.com/Harsh-D-2004/Medicine_Management_System/refs/heads/main/images/logo_mm.png",
     stack: ["Java", "React", "MySQL", "Springboot", "Javascript" , "HTML" , "CSS"],
     demoUrl: "https://alumnet.vercel.app",
     githubUrl: "https://github.com/Harsh-D-2004/Medicine_Management_System",
+  },
+    {
+    title: "Support Ticket System",
+    description:
+      "A web-based support system that enables customers to raise tickets, support agents to resolve them, and admins to manage everything with Github Integration",
+    image:
+      "https://raw.githubusercontent.com/Harsh-D-2004/ticket-system/refs/heads/main/logo/logo.png",
+    stack: ["EJS", "MongoDB", "NodeJS", "Javascript" , "HTML" , "CSS" , "Github Integration" , "Express" , "Templates"],
+    demoUrl: "https://alumnet.vercel.app",
+    githubUrl: "https://github.com/Harsh-D-2004/ticket-system",
   },
 ];

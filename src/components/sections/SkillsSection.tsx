@@ -62,13 +62,15 @@ const SkillsSection = () => {
               transition={{ duration: 0.4, delay: rowIndex * 0.1 }}
             >
               {row.map((skill) => (
-                <img
-                  key={skill.name}
-                  src={skill.src}
-                  alt={skill.name}
-                  title={skill.name}
-                  className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
-                />
+                <motion.div whileHover={{ scale: 1.3 }} className="cursor-pointer relative" transition={{ duration: 0.2, delay: rowIndex * 0.1 }}>
+                  <img
+                    key={skill.name}
+                    src={skill.src}
+                    alt={skill.name}
+                    title={skill.name}
+                    className="w-12 h-12 sm:w-14 sm:h-14 object-contain"
+                  />
+                </motion.div>
               ))}
             </motion.div>
           ))}
