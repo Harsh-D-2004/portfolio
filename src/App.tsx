@@ -12,7 +12,6 @@ import Work from "./pages/Work";
 
 const queryClient = new QueryClient();
 
-// ScrollToTop component to handle scrolling to top on route changes
 const ScrollToTop = () => {
   const { pathname } = useLocation();
   
@@ -34,7 +33,6 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/work" element={<Work />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

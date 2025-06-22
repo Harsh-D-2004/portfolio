@@ -9,6 +9,7 @@ import AchievementsSection from '@/components/sections/AchievementsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/Footer';
 import SkillsSection from '@/components/sections/SkillsSection';
+import axios from 'axios';
 
 const Index = () => {
   const location = useLocation();
@@ -26,6 +27,22 @@ const Index = () => {
       window.scrollTo(0, 0);
     }
   }, [location]);
+
+  useEffect(() => {
+
+  const fetchData = async () => {
+    try {
+      if(!sessionStorage.getItem('hasVisited')) {
+        sessionStorage.setItem('hasVisited', 'true');
+        const res = await axios.get('https://portfolio-backend-vc3f.onrender.com/visitor-info');
+      }
+    } catch (err) {
+      console.error('Request failed:', err);
+    }
+  };
+
+  fetchData();
+  }, []);
 
   return (
     <div className="min-h-screen bg-background text-foreground">
